@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using AssetManagementSystem.Models;
+using AssetManagementSystem.Utility;
 using Utility;
 
 namespace AssetManagementSystem.Controllers
@@ -134,6 +135,7 @@ namespace AssetManagementSystem.Controllers
             if (asset == null)
             {
                 // no; tell the user
+                Logger.Record(LogLevel.Error, "Attempted to access record id that does not exist: " + id);
                 return Json(new Msg { Result = "Error", Message = "Asset.Get(): Invalid Asset.Id." }, JsonRequestBehavior.AllowGet);
             }
 
@@ -215,6 +217,17 @@ namespace AssetManagementSystem.Controllers
             List<Asset> assets = new List<Asset>(); // all the assets we find
 
             // were we given a licenseplate?
+
+            try
+            {
+                throw new Exception("Test exception here...");
+            }
+            catch(Exception e)
+            {
+                Logger.Record(e, LogLevel.Fatal);
+            }
+
+
             if (licenseplate != null && licenseplate != "")
             {
                 PreviousSearch = true;  // we will have done a search
