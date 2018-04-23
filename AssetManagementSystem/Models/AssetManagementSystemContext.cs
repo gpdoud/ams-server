@@ -19,14 +19,16 @@ namespace AssetManagementSystem.Models
         {
         }
 
-        public System.Data.Entity.DbSet<AssetManagementSystem.Models.User> Users { get; set; }
+        public DbSet<User> Users { get; set; }
 
-        public System.Data.Entity.DbSet<AssetManagementSystem.Models.Asset> Assets { get; set; }
+        public DbSet<Asset> Assets { get; set; }
 
-        public System.Data.Entity.DbSet<AssetManagementSystem.Models.Vehicle> Vehicles { get; set; }
+        public DbSet<Vehicle> Vehicles { get; set; }
 
-        public System.Data.Entity.DbSet<AssetManagementSystem.Models.Location> Locations { get; set; }
+        public DbSet<Location> Locations { get; set; }
 
-        public System.Data.Entity.DbSet<AssetManagementSystem.Models.ServiceRecord> ServiceRecords { get; set; }
+        public DbSet<ServiceRecord> ServiceRecords { get; set; }
+
+        public DbSet<Log> Logs { get; set; }
     }
 }

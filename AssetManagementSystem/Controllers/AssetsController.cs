@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using AssetManagementSystem.Models;
+using AssetManagementSystem.Utility;
 using Utility;
 
 namespace AssetManagementSystem.Controllers
@@ -133,7 +134,6 @@ namespace AssetManagementSystem.Controllers
             // did we find an asset?
             if (asset == null)
             {
-                // no; tell the user
                 return Json(new Msg { Result = "Error", Message = "Asset.Get(): Invalid Asset.Id." }, JsonRequestBehavior.AllowGet);
             }
 
